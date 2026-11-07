@@ -1,142 +1,178 @@
-Create a complete modern personal portfolio website for me using only ONE file called
-index.html'.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional portfolio of Kenneth Martin Bermejo Pulia — healthcare administration, revenue cycle support, customer service, and virtual assistance.">
+  <title>Kenneth Martin Bermejo Pulia | Professional Portfolio</title>
+  <style>
+    :root{--bg:#08111f;--panel:#101d31;--panel2:#13243b;--text:#edf4ff;--muted:#a8b8ce;--blue:#60a5fa;--indigo:#818cf8;--line:rgba(174,198,230,.16);--max:1120px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{margin:0;background:radial-gradient(ellipse at 15% 0%,rgba(59,130,246,.16),transparent 34%),radial-gradient(ellipse at 90% 15%,rgba(99,102,241,.13),transparent 30%),var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.7}
+    a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(8,17,31,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-weight:800;letter-spacing:.02em}.brand span{color:var(--blue)}
+    nav{display:flex;gap:20px;flex-wrap:wrap}nav a{font-size:.9rem;color:var(--muted);transition:.2s}nav a:hover{color:var(--blue)}
+    .menu{display:none;background:transparent;border:1px solid var(--line);color:var(--text);border-radius:9px;padding:8px 12px}
+    section{padding:86px 0}.hero{padding:104px 0 88px}.eyebrow{color:var(--blue);font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    h1{font-size:clamp(2.5rem,6vw,4.7rem);line-height:1.08;letter-spacing:-.045em;margin:16px 0}.gradient{background:linear-gradient(100deg,#93c5fd,#a5b4fc);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:1.15rem;color:var(--muted);max-width:800px}.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:12px;font-weight:750;border:1px solid var(--line);transition:transform .2s,background .2s}.btn:hover{transform:translateY(-3px)}.primary{background:linear-gradient(110deg,#2563eb,#6366f1);border:0;color:white}.secondary{background:rgba(255,255,255,.04)}
+    .hero-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}.tag{border:1px solid var(--line);background:rgba(255,255,255,.035);color:#c9d8ec;padding:7px 12px;border-radius:99px;font-size:.84rem}
+    .section-head{margin-bottom:30px}.section-head h2{font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.2;margin:8px 0}.section-head p{color:var(--muted);max-width:760px;margin:0}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.card{background:linear-gradient(145deg,rgba(19,36,59,.92),rgba(13,27,46,.94));border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 14px 40px rgba(0,0,0,.12);transition:transform .22s,border-color .22s}.card:hover{transform:translateY(-4px);border-color:rgba(96,165,250,.48)}
+    .card h3{margin:0 0 8px;font-size:1.12rem}.card p{margin:0;color:var(--muted)}.skill-list{display:flex;flex-wrap:wrap;gap:10px}.skill{padding:9px 12px;background:rgba(96,165,250,.09);border:1px solid rgba(96,165,250,.2);border-radius:10px;color:#d9e8ff;font-size:.92rem}
+    .timeline{display:grid;gap:18px}.job{position:relative}.job h3{font-size:1.12rem;margin:0}.job .meta{color:var(--blue);font-size:.9rem;margin:5px 0 12px}.job ul,.service ul{padding-left:20px;margin:10px 0 0;color:var(--muted)}.job li,.service li{margin:6px 0}
+    .service h3{color:#e7efff}.service .number{font-size:.78rem;color:var(--blue);font-weight:800;letter-spacing:.12em}
+    .focus{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .contact-panel{background:linear-gradient(120deg,rgba(37,99,235,.2),rgba(99,102,241,.14));border:1px solid rgba(129,140,248,.25);border-radius:22px;padding:34px}
+    .contact-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.contact-links a{overflow-wrap:anywhere}
+    footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:.9rem}.footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .muted{color:var(--muted)}.top-link{color:var(--blue)}
+    @media(max-width:760px){.nav{align-items:flex-start;padding:16px 0;flex-wrap:wrap}.menu{display:block;margin-left:auto}nav{display:none;width:100%;padding:8px 0 4px;gap:12px 18px}nav.open{display:flex}.grid,.focus{grid-template-columns:1fr}.hero{padding:76px 0 64px}section{padding:66px 0}.contact-panel{padding:25px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <!-- EDIT YOUR NAME OR NAVIGATION LABELS HERE -->
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home">Kenneth <span>Pulia</span></a>
+      <button class="menu" id="menuButton" aria-expanded="false" aria-controls="siteNav">Menu</button>
+      <nav id="siteNav" aria-label="Main navigation">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Focus Areas</a><a href="#services">Services</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-My details:
+  <main>
+    <!-- HOME: EDIT YOUR NAME AND PROFESSIONAL HEADLINE HERE -->
+    <section class="hero" id="home">
+      <div class="wrap">
+        <div class="eyebrow">Professional Portfolio</div>
+        <h1>Kenneth Martin<br><span class="gradient">Bermejo Pulia</span></h1>
+        <p class="lead">Revenue Cycle Member / Health Plan Advisor · Broker Onboarding Specialist / Broker Experience Specialist · Loan Officer · Stockbroker / Marketing Specialist / Sales · Solar Marketing Specialist · Customer Service Representative / Technical Support Representative</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact">Contact Me</a>
+          <a class="btn secondary" href="#experience">View Experience</a>
+        </div>
+        <div class="hero-tags"><span class="tag">Healthcare Administration</span><span class="tag">Revenue Cycle Support</span><span class="tag">Customer Experience</span><span class="tag">Virtual Administrative Support</span></div>
+      </div>
+    </section>
 
-Name: Kenneth Martin Bermejo Pulia
-Professional Title: [Revenue Cycle Member / Health Plan Advisor | Broker Onboarding Specialist / Broker Experience Specialist |Loan Officer **Stockbroker / Marketing Specialist / Sales |**    **Solar Marketing Specialist /&#x20;**&#x20;   **Customer Service Representative / Technical Support Representative&#x20;**&#x20;   ]
-About Me: [I am a healthcare and customer service professional with over 14 years of experience supporting customers, health plan members, and healthcare providers. My expertise includes healthcare administration, benefits and claims inquiries, medical records coordination, customer support, and administrative assistance. I manage 100+ cases daily while maintaining accurate documentation and timely follow-ups. I am committed to providing reliable, professional support that helps businesses improve efficiency and customer satisfaction.]
-Skills: [Customer Service & Member Advocacy • Health Plan Benefits Inquiries • Claims & Provider-Network Inquiries • Broker/Client Onboarding • Documentation & Record Handling • Customer Communication • Issue Resolution & Escalation • Technical Support • Sales & Upselling • Loan Application Processing • CRM Documentation • Email & Inbox Management • Data Accuracy • Team Coordination • Time Management]
-Experience: [
-Revenue Cycle Member / Health Plan Advisor| Carelon Global Solutions
-Bonifacio Global City, Taguig, Philippines  •  September 2024 – October 2026
-•	Manage 100+ cases and tasks daily, coordinating healthcare payer and facility communications while maintaining accurate case documentation and tracking pending requests through follow-up and resolution.
-•	Contact insurance companies and healthcare facilities to verify primary payer information, clarify discrepancies, identify missing documentation, and facilitate medical records and procedure report requests.
-•	Prepare and send professional correspondence, medical report requests, and invoice follow-ups while assisting with outstanding account balances and maintaining organized case records.
-•	Prioritize pending and aging cases, coordinate with internal teams and external providers, and follow established procedures to support timely request completion, documentation accuracy, and daily productivity and quality targets.
-•	Resolved member inquiries involving health-plan benefits, claims, and provider networks.
-•	Supported member advocacy and worked to maintain a high standard of member satisfaction.
-•	Followed HIPAA-related privacy and compliance requirements while handling member inquiries.
-•	Contributed to first-call resolution (FCR) and customer satisfaction (CSAT) goals.
-Broker Onboarding Specialist / Broker Experience Specialist | Probecx
-Makati, Metro Manila, Philippines  •  January 2024 – June 2024
-•	Supported the end-to-end onboarding process for broker inquiries.
-•	Coordinated communication between brokers and internal teams.
-•	Helped ensure broker credentials and legal documentation met applicable requirements.
-Customer Service Representative / Technical Support Representative / Sales | Concentrix Philippines
-Bacolod City, Negros Occidental, Philippines  •  October 2022 – November 2023
-•	Used customer communication and sales skills to support customer needs and product upgrades.
-•	Analyzed reported technical issues and worked toward efficient solutions.
-•	Contributed to sales targets and customer support performance.
-Loan Officer | ARB Call Facilities
-Bacolod, Negros Occidental, Philippines  •  June 2022 – October 2022
-•	Handled a high volume of customer inquiries while working toward daily performance targets.
+    <!-- ABOUT: ORIGINAL PROFILE CONTENT, PRESENTED IN A READABLE SECTION -->
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">About Me</div><h2>Reliable support. Clear communication. Accurate follow-through.</h2></div>
+        <div class="card"><p>I am a healthcare and customer service professional with over 14 years of experience supporting customers, health plan members, and healthcare providers. My expertise includes healthcare administration, benefits and claims inquiries, medical records coordination, customer support, and administrative assistance. I manage 100+ cases daily while maintaining accurate documentation and timely follow-ups. I am committed to providing reliable, professional support that helps businesses improve efficiency and customer satisfaction.</p></div>
+      </div>
+    </section>
 
-Customer Service Representative | iQor Philippines Inc.
-Talisay City, Negros Occidental, Philippines  •  May 2021 – June 2022
-•	Evaluated and processed loan applications by verifying financial documentation and assessing applicant creditworthiness.
-Healthcare Provider Service Representative | Optum Global Solutions
-Taguig, Metro Manila / Cebu City, Cebu, Philippines  •  September 2018 – March 2021
-•	Resolved inquiries related to health-plan benefits, claims, and provider networks.
-•	Supported member advocacy and customer satisfaction while following HIPAA-related compliance requirements.
-•	Contributed to first-call resolution (FCR) and customer satisfaction (CSAT) goals.
-•	Followed HIPAA-related privacy and compliance requirements while handling member inquiries.
-Stockbroker / Marketing Specialist / Sales | Best Sales System International
-Makati City, Philippines  •  July 2016 – September 2018
-•	Executed trade orders and managed investment portfolios for clients.
-•	Considered market trends and risk management when supporting client investment activity.
-Solar Marketing Specialist / Sales | Red Sky Comms, Inc.
-Makati City, Philippines  •  October 2015 – July 2016
-•	Worked toward monthly sales quotas through proactive cold calling and referral-building.
-•	Promoted renewable-energy solutions by communicating potential long-term cost savings and environmental benefits.
-Customer Service Representative / Technical Support Representative | ePerformax
-Makati, Metro Manila, Philippines  •  December 2014 – October 2015
-•	Provided customer service and technical support by phone, resolving customer inquiries.
-Technical Support Representative | West Contact Services Inc. (WSCI)
-Makati City, Philippines  •  January 2014 – December 2014
-•	Used CRM software to document customer interactions, track ticket progress, and follow up on unresolved issues.
-Technical Support Representative | Convergys Philippines Services Corporation
-Manila, Philippines  •  July 2012 – December 2013
-•	Balanced efficient call handling with thorough problem resolution while maintaining key performance indicators.
-Customer Service Representative / Technical Support Representative | Sutherland Global Services
-Tarlac City and Clark, Pampanga, Philippines  •  January 2010 – July 2012
-•	Provided clear, professional technical guidance and worked to meet quality-assurance standards.
+    <!-- SKILLS: EDIT OR ADD SKILLS IN THIS LIST -->
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Core Skills</div><h2>Skills & capabilities</h2><p>A broad mix of healthcare administration, customer support, communication, and operational skills.</p></div>
+        <div class="skill-list">
+          <span class="skill">Customer Service & Member Advocacy</span><span class="skill">Health Plan Benefits Inquiries</span><span class="skill">Claims & Provider-Network Inquiries</span><span class="skill">Broker / Client Onboarding</span><span class="skill">Documentation & Record Handling</span><span class="skill">Customer Communication</span><span class="skill">Issue Resolution & Escalation</span><span class="skill">Technical Support</span><span class="skill">Sales & Upselling</span><span class="skill">Loan Application Processing</span><span class="skill">CRM Documentation</span><span class="skill">Email & Inbox Management</span><span class="skill">Data Accuracy</span><span class="skill">Team Coordination</span><span class="skill">Time Management</span>
+        </div>
+      </div>
+    </section>
 
-]
+    <!-- EXPERIENCE: ORIGINAL EMPLOYERS, TITLES, DATES, LOCATIONS, AND RESPONSIBILITIES -->
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Career History</div><h2>Professional experience</h2><p>Experience across healthcare services, broker onboarding, customer service, technical support, lending, sales, and investment services.</p></div>
+        <div class="timeline">
+          <article class="card job"><h3>Revenue Cycle Member / Health Plan Advisor | Carelon Global Solutions</h3><div class="meta">Bonifacio Global City, Taguig, Philippines · September 2024 – October 2026</div><ul>
+            <li>Manage 100+ cases and tasks daily, coordinating healthcare payer and facility communications while maintaining accurate case documentation and tracking pending requests through follow-up and resolution.</li>
+            <li>Contact insurance companies and healthcare facilities to verify primary payer information, clarify discrepancies, identify missing documentation, and facilitate medical records and procedure report requests.</li>
+            <li>Prepare and send professional correspondence, medical report requests, and invoice follow-ups while assisting with outstanding account balances and maintaining organized case records.</li>
+            <li>Prioritize pending and aging cases, coordinate with internal teams and external providers, and follow established procedures to support timely request completion, documentation accuracy, and daily productivity and quality targets.</li>
+            <li>Resolved member inquiries involving health-plan benefits, claims, and provider networks.</li>
+            <li>Supported member advocacy and worked to maintain a high standard of member satisfaction.</li>
+            <li>Followed HIPAA-related privacy and compliance requirements while handling member inquiries.</li>
+            <li>Contributed to first-call resolution (FCR) and customer satisfaction (CSAT) goals.</li>
+          </ul></article>
+          <article class="card job"><h3>Broker Onboarding Specialist / Broker Experience Specialist | Probecx</h3><div class="meta">Makati, Metro Manila, Philippines · January 2024 – June 2024</div><ul>
+            <li>Supported the end-to-end onboarding process for broker inquiries.</li><li>Coordinated communication between brokers and internal teams.</li><li>Helped ensure broker credentials and legal documentation met applicable requirements.</li>
+          </ul></article>
+          <article class="card job"><h3>Customer Service Representative / Technical Support Representative / Sales | Concentrix Philippines</h3><div class="meta">Bacolod City, Negros Occidental, Philippines · October 2022 – November 2023</div><ul>
+            <li>Used customer communication and sales skills to support customer needs and product upgrades.</li><li>Analyzed reported technical issues and worked toward efficient solutions.</li><li>Contributed to sales targets and customer support performance.</li>
+          </ul></article>
+          <article class="card job"><h3>Loan Officer | ARB Call Facilities</h3><div class="meta">Bacolod, Negros Occidental, Philippines · June 2022 – October 2022</div><ul><li>Handled a high volume of customer inquiries while working toward daily performance targets.</li></ul></article>
+          <article class="card job"><h3>Customer Service Representative | iQor Philippines Inc.</h3><div class="meta">Talisay City, Negros Occidental, Philippines · May 2021 – June 2022</div><ul><li>Evaluated and processed loan applications by verifying financial documentation and assessing applicant creditworthiness.</li></ul></article>
+          <article class="card job"><h3>Healthcare Provider Service Representative | Optum Global Solutions</h3><div class="meta">Taguig, Metro Manila / Cebu City, Cebu, Philippines · September 2018 – March 2021</div><ul>
+            <li>Resolved inquiries related to health-plan benefits, claims, and provider networks.</li><li>Supported member advocacy and customer satisfaction while following HIPAA-related compliance requirements.</li><li>Contributed to first-call resolution (FCR) and customer satisfaction (CSAT) goals.</li><li>Followed HIPAA-related privacy and compliance requirements while handling member inquiries.</li>
+          </ul></article>
+          <article class="card job"><h3>Stockbroker / Marketing Specialist / Sales | Best Sales System International</h3><div class="meta">Makati City, Philippines · July 2016 – September 2018</div><ul><li>Executed trade orders and managed investment portfolios for clients.</li><li>Considered market trends and risk management when supporting client investment activity.</li></ul></article>
+          <article class="card job"><h3>Solar Marketing Specialist / Sales | Red Sky Comms, Inc.</h3><div class="meta">Makati City, Philippines · October 2015 – July 2016</div><ul><li>Worked toward monthly sales quotas through proactive cold calling and referral-building.</li><li>Promoted renewable-energy solutions by communicating potential long-term cost savings and environmental benefits.</li></ul></article>
+          <article class="card job"><h3>Customer Service Representative / Technical Support Representative | ePerformax</h3><div class="meta">Makati, Metro Manila, Philippines · December 2014 – October 2015</div><ul><li>Provided customer service and technical support by phone, resolving customer inquiries.</li></ul></article>
+          <article class="card job"><h3>Technical Support Representative | West Contact Services Inc. (WSCI)</h3><div class="meta">Makati City, Philippines · January 2014 – December 2014</div><ul><li>Used CRM software to document customer interactions, track ticket progress, and follow up on unresolved issues.</li></ul></article>
+          <article class="card job"><h3>Technical Support Representative | Convergys Philippines Services Corporation</h3><div class="meta">Manila, Philippines · July 2012 – December 2013</div><ul><li>Balanced efficient call handling with thorough problem resolution while maintaining key performance indicators.</li></ul></article>
+          <article class="card job"><h3>Customer Service Representative / Technical Support Representative | Sutherland Global Services</h3><div class="meta">Tarlac City and Clark, Pampanga, Philippines · January 2010 – July 2012</div><ul><li>Provided clear, professional technical guidance and worked to meet quality-assurance standards.</li></ul></article>
+        </div>
+      </div>
+    </section>
 
-Services: # Healthcare Virtual Assistant & Administrative Support Services
+    <!-- PROJECTS / FOCUS AREAS: ORGANIZED FROM THE WORK AND SERVICES DESCRIBED ABOVE; NO PROJECTS HAVE BEEN ADDED -->
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Projects & Focus Areas</div><h2>Areas of professional contribution</h2><p>The portfolio content describes ongoing work capabilities rather than named standalone projects. These focus areas organize that experience without adding unverified project claims.</p></div>
+        <div class="focus">
+          <div class="card"><h3>Healthcare payer coordination</h3><p>Primary payer verification, insurance communication, benefits and claims inquiries, and follow-up coordination.</p></div>
+          <div class="card"><h3>Medical records requests</h3><p>Procedure report requests, facility follow-ups, documentation review, and tracking pending records.</p></div>
+          <div class="card"><h3>Revenue cycle follow-up</h3><p>Invoice correspondence, account-balance follow-ups, payer communication, and organized case documentation.</p></div>
+        </div>
+      </div>
+    </section>
 
-I provide reliable remote healthcare administrative support to medical practices, healthcare organizations, insurance-related businesses, and revenue cycle management teams. I help healthcare professionals manage administrative workloads, coordinate with insurance providers and medical facilities, maintain accurate records, and follow up on pending requests.
+    <!-- SERVICES: ORIGINAL SERVICE OFFERINGS AND COMMITMENT -->
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Services</div><h2>Healthcare virtual assistant & administrative support</h2><p>I provide reliable remote healthcare administrative support to medical practices, healthcare organizations, insurance-related businesses, and revenue cycle management teams. I help healthcare professionals manage administrative workloads, coordinate with insurance providers and medical facilities, maintain accurate records, and follow up on pending requests.</p></div>
+        <div class="grid">
+          <article class="card service"><div class="number">01</div><h3>Insurance Verification & Payer Support</h3><ul><li>Primary insurance and payer verification</li><li>Insurance eligibility confirmation</li><li>Communication and follow-ups with insurance companies</li><li>Verification of patient coverage information</li><li>Coordination with healthcare facilities regarding insurance details</li></ul></article>
+          <article class="card service"><div class="number">02</div><h3>Revenue Cycle Administrative Support</h3><ul><li>Invoice and account-balance follow-ups</li><li>Payment status inquiries and documentation</li><li>Communication with third-party payers</li><li>Tracking pending invoices and account-related concerns</li><li>Maintaining accurate records of follow-up activities</li></ul></article>
+          <article class="card service"><div class="number">03</div><h3>Medical Records & Documentation</h3><ul><li>Medical records and procedure report requests</li><li>Follow-ups with hospitals, clinics, and imaging facilities</li><li>Coordination of medical documentation requests</li><li>Monitoring pending and completed report requests</li><li>Organizing and reviewing documents for completeness</li></ul></article>
+          <article class="card service"><div class="number">04</div><h3>Healthcare Communication & Coordination</h3><ul><li>Outbound calls to insurance companies and healthcare facilities</li><li>Professional email correspondence</li><li>Fax preparation and transmission</li><li>Follow-up communication with providers and payer representatives</li><li>Appointment and procedure status confirmation when assigned</li></ul></article>
+          <article class="card service"><div class="number">05</div><h3>Healthcare Data Entry & Case Management</h3><ul><li>Patient and case information updates</li><li>CRM and case-management documentation</li><li>Accurate recording of call outcomes and follow-up notes</li><li>Monitoring pending cases and outstanding tasks</li><li>Reviewing records for missing or inconsistent information</li></ul></article>
+          <article class="card service"><div class="number">06</div><h3>General Virtual Administrative Assistance</h3><ul><li>Email and correspondence management</li><li>Data entry and document organization</li><li>Administrative tracking and reporting</li><li>Follow-up task management</li><li>High-volume administrative support</li></ul></article>
+        </div>
+        <div class="card" style="margin-top:18px"><h3>My Commitment</h3><p>I aim to provide accurate, organized, and dependable administrative support while maintaining professional communication, attention to detail, confidentiality, and timely follow-through.</p><p style="margin-top:12px">I specialize in non-clinical healthcare administration and operational support, allowing healthcare teams to focus more of their time on patient care and essential business operations.</p></div>
+      </div>
+    </section>
 
-\### 1. Insurance Verification & Payer Support
-\- Primary insurance and payer verification
-\- Insurance eligibility confirmation
-\- Communication and follow-ups with insurance companies
-\- Verification of patient coverage information
-\- Coordination with healthcare facilities regarding insurance details
+    <!-- CONTACT: UPDATE EMAIL, LINKEDIN, OR LOCATION HERE -->
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-panel">
+          <div class="eyebrow">Contact</div><h2>Let's connect</h2>
+          <p class="lead">For professional opportunities, client inquiries, or healthcare administrative support, please reach out through email or LinkedIn.</p>
+          <div class="contact-links">
+            <a class="btn primary" href="mailto:knthmrtn0617@gmail.com">Email Kenneth</a>
+            <a class="btn secondary" href="https://www.linkedin.com/in/kenneth-martin-bermejo-pulia-59583730a/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+          </div>
+          <p class="muted" style="margin-top:22px">Email: knthmrtn0617@gmail.com<br>Location: Malabon City, Philippines</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-\### 2. Revenue Cycle Administrative Support
-\- Invoice and account-balance follow-ups
-\- Payment status inquiries and documentation
-\- Communication with third-party payers
-\- Tracking pending invoices and account-related concerns
-\- Maintaining accurate records of follow-up activities
-
-\### 3. Medical Records & Documentation
-\- Medical records and procedure report requests
-\- Follow-ups with hospitals, clinics, and imaging facilities
-\- Coordination of medical documentation requests
-\- Monitoring pending and completed report requests
-\- Organizing and reviewing documents for completeness
-
-\### 4. Healthcare Communication & Coordination
-\- Outbound calls to insurance companies and healthcare facilities
-\- Professional email correspondence
-\- Fax preparation and transmission
-\- Follow-up communication with providers and payer representatives
-\- Appointment and procedure status confirmation when assigned
-
-\### 5. Healthcare Data Entry & Case Management
-\- Patient and case information updates
-\- CRM and case-management documentation
-\- Accurate recording of call outcomes and follow-up notes
-\- Monitoring pending cases and outstanding tasks
-\- Reviewing records for missing or inconsistent information
-
-\### 6. General Virtual Administrative Assistance
-\- Email and correspondence management
-\- Data entry and document organization
-\- Administrative tracking and reporting
-\- Follow-up task management
-\- High-volume administrative support
-
-\*\*My Commitment\*\*
-
-I aim to provide accurate, organized, and dependable administrative support while maintaining professional communication, attention to detail, confidentiality, and timely follow-through.
-
-I specialize in non-clinical healthcare administration and operational support, allowing healthcare teams to focus more of their time on patient care and essential business operations.
-Email: [knthmrtn0617@gmail.com]
-LinkedIn: [[https://www.linkedin.com/in/kenneth-martin-bermejo-pulia-59583730a/](https://www.linkedin.com/in/kenneth-martin-bermejo-pulia-59583730a/)]
-Location: [Malabon City, Philippines]
-
-Design it as a modern, stylish, professional portfolio suitable for finding clients or applying
-for jobs. Use a dark professional theme with blue/indigo accents, modern cards, subtle
-gradients, hover effects, smooth scrolling, and responsive design.
-
-Include these sections:
-Home, About, Skills, Experience, Projects, Services, Contact, and
-Footer.
-
-IMPORTANT:
-
-Ask an\* Use only HTML5, vanilla CSS, and vanilla JavaScript.
-Put ALL HTML, CSS, and JavaScript inside 'index.html'.
-Do not use Bootstrap, Tailwind, React, Node. js, npm, or external libraries.
-Do not create additional files.
-\* Make it responsive for desktop and mobile.
-\* Add comments showing where I can edit my information.
-\* It must work by copying the code into Windows Notepad, saving it as 'index.html', and opening
-it directly in a browser.
-
-Give me the COMPLETE working 'index.html' code in one code block. Do not give partial code or a
-tutorial.
+  <!-- FOOTER -->
+  <footer><div class="wrap footer-inner"><span>© <span id="year"></span> Kenneth Martin Bermejo Pulia. All rights reserved.</span><a class="top-link" href="#home">Back to top ↑</a></div></footer>
+  <script>
+    // Mobile navigation toggle and automatic footer year.
+    const menuButton = document.getElementById('menuButton');
+    const siteNav = document.getElementById('siteNav');
+    menuButton.addEventListener('click', () => {
+      const isOpen = siteNav.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+    });
+    siteNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      siteNav.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
